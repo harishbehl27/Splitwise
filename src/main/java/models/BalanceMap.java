@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class BalanceMap {
 
-    private final Map<User, Amount> balances;
+    private final Map<String, Amount> balances;
 
 
-    public BalanceMap(Map<User, Amount> resultBalances) {
+    public BalanceMap(Map<String, Amount> resultBalances) {
         this.balances = resultBalances;
     }
 
@@ -18,7 +18,7 @@ public class BalanceMap {
 
     }
 
-    public Map<User, Amount> getBalances() {
+    public Map<String, Amount> getBalances() {
 
         return balances;
     }

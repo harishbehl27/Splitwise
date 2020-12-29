@@ -23,12 +23,12 @@ public class ExpenseService {
     public PaymentGraph getPaymentGraph (BalanceMap groupBalances)
     {
 
-        final var graph = new HashMap<User, BalanceMap>();
-        PriorityQueue<Map.Entry<User, Amount>> positiveAmounts
+        final var graph = new HashMap<String, BalanceMap>();
+        PriorityQueue<Map.Entry<String, Amount>> positiveAmounts
                 = new PriorityQueue<>(Comparator.comparing(balance -> -balance.getValue().getAmount()));
 
 
-        PriorityQueue<Map.Entry<User, Amount>> negativeAmounts
+        PriorityQueue<Map.Entry<String, Amount>> negativeAmounts
                 = new PriorityQueue<>(Comparator.comparing(balance -> balance.getValue().getAmount()));
 
         for (var balance : groupBalances.getBalances().entrySet())
@@ -67,17 +67,12 @@ public class ExpenseService {
                 negativeAmounts.add(new AbstractMap.SimpleEntry<>(largestPositive.getKey(),remainingAmount));
 
             }
-
-
-
-
-
         }
-
-
 
         return new PaymentGraph(graph);
     }
+
+
 
 
 
