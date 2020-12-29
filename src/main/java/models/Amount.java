@@ -22,7 +22,7 @@ public class Amount {
 
     public Amount add(Amount amount) {
 
-        return new Amount(currency, amount.amount);
+        return new Amount(currency, this.amount+ amount.amount);
     }
 
     public double getAmount() {
