@@ -3,7 +3,7 @@ package models;
 public class Amount {
 
     private final Currency currency;
-
+    private  final int i;
     private final double amount;
 
 
